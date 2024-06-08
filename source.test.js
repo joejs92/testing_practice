@@ -1,21 +1,17 @@
-const caesarCipher = require('./source');
+const analyzeArray = require('./source');
 
-it('Simple Shift', () => {
-  expect(caesarCipher('hello',3)).toBe('khoor');
+it('Find Min', () => {
+  expect(analyzeArray([3,2,5,4,1]).average).toBe(3);
 });
 
 it('Punctuation', () => {
-    expect(caesarCipher('hello!',3)).toBe('khoor!');
+    expect(analyzeArray([3,2,5,4,1]).min).toBe(1);
   });
 
 it('Wrap-around', () => {
-  expect(caesarCipher('xyz',3)).toBe('abc');
+  expect(analyzeArray([3,2,5,4,1]).max).toBe(5);
 });
 
 it('Large Shift', () => {
-    expect(caesarCipher('y',265)).toBe('d');
+    expect(analyzeArray([3,2,5,4,1]).length).toBe(5);
   });
-
-it('Punctuation and Spaces', () => {
-    expect(caesarCipher('Hello, World!',3)).toBe('Khoor, Zruog!');
-});

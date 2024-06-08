@@ -60,5 +60,27 @@ function casesarCipher(plainText,shift){
     return encryptedString;
 }
 
+function compareNumbers(a,b){return a-b;};
+function findAverage(array){
+    let totalSum = 0;
+    for(i = 0; i < array.length; i++){
+        totalSum += array[i];
+    }
+    return totalSum/array.length;
+}
+
+function analyzeArray(array){
+    const average = findAverage(array);
+    const sortedArray = array.sort(compareNumbers);
+    const min = sortedArray[0];
+    const max = sortedArray[array.length-1];
+    const length = array.length;
+    return {average: average,
+        min: min,
+        max: max,
+        length: length
+    };
+}
+
 //const newCalculator = new calculator();
-module.exports = casesarCipher;
+module.exports = analyzeArray;
